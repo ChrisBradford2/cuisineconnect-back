@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dishes",
+  "info": {
+    "singularName": "dish",
+    "pluralName": "dishes",
+    "displayName": "Dish",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "ingredients": {
+      "type": "component",
+      "repeatable": true,
+      "component": "common.ingredients"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "dish"
+    },
+    "food_preferences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::food-preference.food-preference",
+      "mappedBy": "dishes"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "dish"
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "enum": [
+        "Facile",
+        "Moyen",
+        "Difficile",
+        "Azy laisse tomber mon reuf"
+      ]
+    },
+    "recipe": {
+      "type": "richtext",
+      "required": true
+    },
+    "favorite_dishes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::favorite-dish.favorite-dish",
+      "mappedBy": "dish"
+    }
+  }
+}

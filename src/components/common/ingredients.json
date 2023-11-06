@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_common_ingredients",
+  "info": {
+    "displayName": "ingredients",
+    "icon": "seed"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "quantity": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

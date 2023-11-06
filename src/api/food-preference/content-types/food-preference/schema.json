@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_preferences",
+  "info": {
+    "singularName": "food-preference",
+    "pluralName": "food-preferences",
+    "displayName": "Food Preference",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "dishes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::dish.dish",
+      "inversedBy": "food_preferences"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "food_preferences"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "favorite_dishes",
+  "info": {
+    "singularName": "favorite-dish",
+    "pluralName": "favorite-dishes",
+    "displayName": "Favorite Dish",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dish": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dish.dish",
+      "inversedBy": "favorite_dishes"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "favorite_dishes"
+    }
+  }
+}
